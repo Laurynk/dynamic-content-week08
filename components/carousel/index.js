@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import {useState} from "react"
+import styles from "./carousel.module.css"
 
 export default function Carousel() {
     const [img, setImg] = useState(0);
@@ -22,6 +23,7 @@ export default function Carousel() {
     }
     return(
         <>
+        <div className={styles.container}>
             <div style={{
                 backgroundImage: "url(/carousel-images/" + img + ".jpg)",
                 backgroundSize: "cover",
@@ -45,6 +47,8 @@ export default function Carousel() {
                     onClick={() => changeImage("forward")}
                 />
             </div>
+        </div>
+            
         </>
     )
 }

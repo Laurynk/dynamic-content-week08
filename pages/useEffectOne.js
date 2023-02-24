@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import styles from '../styles/useEffectOne.module.css'
 
 export default function useEffectOne() {
 
@@ -12,12 +13,16 @@ export default function useEffectOne() {
 
     return(
         <>
-        <Link href="/">Home</Link>
-        <div>
-            useEffectOne
-        </div>
-        <div>
-            {number}
+        <div className={styles.container}>
+            <div className={styles.header}>
+                useEffectOne
+            </div>
+
+            <Link href="/" className={styles.link}>Home</Link>
+
+            <div className={styles.number}>
+                {number}
+            </div>
         </div>
         </>
     )

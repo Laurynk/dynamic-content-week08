@@ -1,5 +1,6 @@
 import Link from "next/link"
 import {useState, useEffect} from "react"
+import styles from "../styles/useEffectTwo.module.css"
 
 export default function useEffectTwo() {
 
@@ -12,13 +13,19 @@ export default function useEffectTwo() {
 
     return(
         <>
-            <Link href="/">Home</Link>
-            <div>
+        <div className={styles.container}>
+
+            <div className={styles.header}>
                 useEffectTwo
             </div>
-            <div>
+
+            <Link href="/" className={styles.link}>Home</Link>
+
+            <div className={styles.number}>
                 {number}
             </div>
+        </div>
+            
         </>
     )
 }

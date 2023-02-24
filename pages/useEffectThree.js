@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import {useEffect, useState} from 'react'
+import styles from "../styles/useEffectThree.module.css"
 
 export default function useEffectThree() {
 
@@ -13,16 +14,22 @@ export default function useEffectThree() {
 
     return(
         <>
-            <Link href="/">Home</Link>
-            <div>
-                <button onClick={() => setNumber(number + 1)}>Click Me</button>
-            </div>
-            <div>
+        <div className={styles.container}>
+            <div className={styles.header}>
                 useEffectThree
             </div>
-            <div>
+            
+            <Link href="/" className={styles.link}>Home</Link>
+
+            <div className={styles.button}>
+                <button onClick={() => setNumber(number + 1)}>Click Me</button>
+            </div>
+
+            <div className={styles.value}>
                 {value}
             </div>
+        </div>
+            
         </>
     )
 }
